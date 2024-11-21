@@ -1,0 +1,292 @@
+/* Color Palette */
+:root {
+    --primary-color: #8BA683; /* Main background and highlight */
+    --secondary-color: #7A633A; /* Header and footer background */
+    --accent-color: #B4946B; /* Button and borders */
+    --text-color: #6D5A56; /* Main text */
+    --background-color: #282924; /* Page background */
+    --green: #B7CA81;
+    --green: #8BA683;
+    --pink: #D08791;
+}
+
+
+/* Global Styles */
+body {
+    font-family: 'Roboto Mono', monospace; /* Apply Roboto Mono globally */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars for the starfield */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+/* Starfield Background */
+.starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Starfield is behind all content */
+    background: radial-gradient(ellipse at center, #000 10%, #111 40%, #000 90%);
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: white; /* Keep stars white */
+    border-radius: 50%; /* Round shape */
+    opacity: 0.8; /* Slight transparency */
+    animation: twinkle 2s infinite, fly linear; /* Twinkling and flying animations */
+}
+
+
+.comet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    animation: cometFly 5s linear; /* Animation duration and movement */
+}
+
+
+/* Header */
+header {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center Yoda and text */
+    justify-content: center; /* Horizontally center the whole group */
+    gap: 1em; /* Space between Yoda and text */
+    padding: 0.5em;
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for header text */
+    font-size: 1.5em; /* Adjusted font size for better proportion */
+    font-weight: bold;
+    z-index: 1; /* Keep header above starfield */
+    position: relative;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Push footer to the bottom if content is short */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    position: relative; /* Ensure main content is above starfield */
+    z-index: 1;
+}
+
+/* Translator Section */
+.translator {
+    text-align: center;
+    max-width: 500px;
+    width: 100%; /* Ensure responsiveness */
+    margin: 0 auto;
+    padding: 1em;
+    background: var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for translator text */
+}
+
+
+/* Textareas for Input and Output */
+textarea {
+    width: 90%; /* Adjusted width for consistency */
+    height: 100px;
+    margin: 1em auto; /* Added consistent top and bottom margins */
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #8BA683; /* Default border color */
+    border-radius: 5px;
+    resize: none;
+    background-color: #424549; /* Gray background */
+    color: #ffffff; /* White font color for contrast */
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for textareas */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+textarea:focus {
+    border-color: #6B8E23;
+    outline: none;
+}
+
+/* Dropdown Menu */
+select {
+    width: 95%; /* Adjusted for consistent layout */
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 1em;
+    border: 2px solid #8BA683; /* Default border color */
+    border-radius: 5px;
+    background-color: #424549; /* Updated background color */
+    color: #ffffff; /* White font color for contrast */
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for dropdown */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background */
+}
+
+
+select:focus {
+    border-color: #6B8E23;
+    outline: none;
+}
+
+/* Dropdown options */
+select option {
+    background-color: #424549; /* Background for dropdown options */
+    color: #ffffff; /* White font color for contrast */
+    font-family: 'Roboto Mono', monospace; /* Ensure consistent font for options */
+}
+
+
+/* Translate Button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for buttons */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: var(--secondary-color);
+    color: white;
+    font-family: 'Roboto Mono', monospace; /* Roboto Mono for footer text */
+    font-size: 14px;
+    font-style: italic;
+    position: relative; /* Footer remains in the normal document flow */
+    z-index: 1; /* Ensure footer stays above starfield */
+}
+
+
+/* Baby Yoda Styling (No major changes, just cleaned up) */
+.baby-yoda {
+    width: 6em;
+    height: 4em;
+    border-radius: 3em 3em 4.5em 4.5em;
+    background: var(--green);
+    position: relative;
+
+    background-image:
+        radial-gradient(circle at 1.5em, #FFF, #FFF 0.25em, transparent 0.3em),
+        radial-gradient(circle at 1em, #000, #000 0.9em, transparent 1em);
+
+    background-position: 0.6em 0.35em, 0.7em 0.6em;
+    background-size: 2.75em 2em;
+    background-repeat: repeat-x;
+    animation: eyes 2s cubic-bezier(0.8, 0.02, 0.2, 0.96) infinite alternate;
+}
+
+/* Keyframe Animation for Baby Yoda */
+@keyframes eyes {
+    to {
+        background-size: 2.75em 1.5em;
+    }
+}
+
+/* Adjust Ears */
+.baby-yoda::before,
+.baby-yoda::after {
+    content: '';
+    display: block;
+    width: 5em;
+    height: 1.5em;
+    background: var(--pink);
+    border-top: solid 0.5em var(--green);
+    position: absolute;
+    top: 0.5em;
+    margin: 0 -1em;
+    z-index: -1;
+    border-radius: 2em 1em;
+    animation: ears 2s cubic-bezier(0.8, 0.02, 0.2, 0.96) infinite alternate;
+}
+
+@keyframes ears {
+    to {
+        transform: rotate(var(--rotate));
+    }
+}
+
+.baby-yoda::before {
+    --rotate: 20deg;
+    transform-origin: center right;
+    right: 100%;
+    border-bottom-left-radius: 9em 4em;
+}
+
+.baby-yoda::after {
+    --rotate: -20deg;
+    transform-origin: center left;
+    left: 100%;
+    border-bottom-right-radius: 9em 4em;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .translator {
+        padding: 0.5em;
+    }
+
+    textarea, select, button {
+        font-size: 14px;
+    }
+}
+
+/* Star Twinkle Animation */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Star Flying Animation */
+@keyframes fly {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+
+/* Comet Animation */
+
+@keyframes cometFly {
+    from {
+        transform: translate(-50%, -50%) translate(-100vw, -100vh); /* Starts off-screen */
+        opacity: 1; /* Fully visible at the start */
+    }
+    to {
+        transform: translate(-50%, -50%) translate(100vw, 100vh); /* Moves off the opposite corner */
+        opacity: 0; /* Fades out as it moves */
+    }
+}
