@@ -17,5 +17,7 @@ The decision to use GPT for Yoda’s language over a custom algorithm stemmed fr
 
 Future enhancements for the Yoda Translator include adding support for automatic input language detection, which would allow users to skip manual language selection. More "fun" translation styles based on other iconic characters or dialects could also be added, expanding the app’s appeal. To improve performance, caching frequently requested translations could reduce API costs and enhance response times. Another potential feature is offline translation using local models, making the app more scalable and independent of external APIs.
 
-John 2024
+
 In conclusion, the Yoda Translator combines utility and entertainment, offering an engaging way to explore languages and creativity. From translating everyday sentences to delighting fans with Yoda’s unique speech style, this project demonstrates how technology can bridge practicality with fun. Whether you’re a language learner or a Star Wars enthusiast, the Yoda Translator ensures an experience that’s both educational and entertaining. Translate wisely, you must!
+
+John 2024
