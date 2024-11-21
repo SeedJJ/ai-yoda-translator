@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import os
 
 # Load OpenAI API key from environment variable
-openai.api_key = os.getenv("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")
+openai.api_key = os.getenv("OPEN_AI_KEY")
 
 # Ensure the API key is set
 if not openai.api_key:
