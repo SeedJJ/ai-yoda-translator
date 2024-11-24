@@ -180,6 +180,18 @@ footer {
     z-index: 1; /* Ensure footer stays above starfield */
 }
 
+/* Footer Links */
+footer a {
+    color: #8BA683; /* Use a greenish color for the link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #6B8E23; /* Change to a darker green on hover */
+    text-decoration: underline;
+}
 
 /* Baby Yoda Styling (No major changes, just cleaned up) */
 .baby-yoda {
