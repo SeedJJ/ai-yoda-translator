@@ -1,5 +1,4 @@
-# YOUR PROJECT TITLE
-#### Video Demo:  https://youtu.be/uD7V6ruzj6Q
+# Yodaspeak Translator
 #### Description:
 The Yoda Translator is an interactive web-based application designed to provide translations of user input into multiple languages, including a fun and whimsical translation into Yoda’s iconic speaking style from Star Wars. The app allows users to explore language learning and communication while engaging with a pop culture icon in an entertaining way. Built using Flask, HTML, CSS, and JavaScript, the project leverages OpenAI's GPT API for dynamic and accurate language translations.
 
